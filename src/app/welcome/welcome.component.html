@@ -1,0 +1,9 @@
+<div id="welcome">
+  <div id="logo">
+    <img [src]="brewdogLogo" alt="Logo" />
+  </div>
+  <div *ngFor="let beer of beers">
+    <img [src]="beer.image" [alt]="beer.name" />
+    <p>{{ beer.name }}</p>
+  </div>
+</div>

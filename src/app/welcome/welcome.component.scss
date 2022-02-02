@@ -1,0 +1,15 @@
+@import '../../styles.scss';
+
+#welcome {
+  height: 100vh;
+  background-color: $background;
+  #logo {
+    display: flex;
+    justify-content: center;
+    height: 15vh;
+    padding: 2rem;
+    img {
+      height: 100%;
+    }
+  }
+}
