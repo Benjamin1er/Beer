@@ -12,9 +12,9 @@ export class BeerCardService {
   constructor(param_service: HttpClient) {
     this.service = param_service;
   }
-  public getCardBeer(): Observable<ICardBeer> {
+  public getCardBeer(id?: number): Observable<ICardBeer> {
     const obsBeer$: Observable<any> = this.service.get(
-      'https://api.punkapi.com/v2/beers/13'
+      `https://api.punkapi.com/v2/beers/${id}`
     );
     const treatment = (param_data: any) => {
       return param_data[0] as ICardBeer;

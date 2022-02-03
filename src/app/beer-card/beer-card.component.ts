@@ -1,6 +1,7 @@
 import { BeerCardService, ICardBeer } from '../services/beerCard.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IBeer } from '../services/beer.service';
 
 @Component({
   selector: 'app-beer-card',
@@ -8,8 +9,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./beer-card.component.scss']
 })
 export class BeerCardComponent implements OnInit {
-  private id?: number;
+  public id?: number;
   public beer?: ICardBeer;
+  public title?: string[];
+
   private service: BeerCardService;
   constructor(private route: ActivatedRoute, param_service: BeerCardService) {
     this.service = param_service;
@@ -17,8 +20,13 @@ export class BeerCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => (this.id = params['id']));
-    this.service.getCardBeer().subscribe((param: ICardBeer) => {
-      this.beer = param;
-    });
+    this.service
+      .getCardBeer(this.id)
+      .subscribe((beer: ICardBeer) => this.setBeerDetails(beer));
+  }
+
+  setBeerDetails(beer: ICardBeer) {
+    this.beer = beer;
+    this.title = beer.name.split(' ');
   }
 }

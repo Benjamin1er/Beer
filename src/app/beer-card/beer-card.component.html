@@ -1,6 +1,6 @@
 <div id="beer-card">
   <div id="bc-left">
-    <h1>{{ beer?.name }}</h1>
+    <h1 *ngFor="let line of title">{{ line }}<br /></h1>
     <img id="first-bottle" [src]="beer?.image_url" [alt]="beer?.name" />
     <img id="second-bottle" [src]="beer?.image_url" [alt]="beer?.name" />
   </div>
