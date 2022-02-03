@@ -1,11 +1,13 @@
 <div id="welcome">
-  <div id="welcome-header">
-    <img [src]="brewdogLogo" alt="Logo" />
-  </div>
   <div id="welcome-hero">
     <div id="welcome-beers">
       <div id="welcome-beer" *ngFor="let beer of beers | slice: 11:17">
-        <img [src]="beer.image_url" [alt]="beer.name" />
+        <img
+          [routerLink]="['/beer']"
+          [queryParams]="{ id: beer.id }"
+          [src]="beer.image_url"
+          [alt]="beer.name"
+        />
         <p>{{ beer.name }}</p>
       </div>
     </div>

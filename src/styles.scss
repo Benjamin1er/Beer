@@ -1,8 +1,42 @@
 @import '../node_modules/normalize-scss/sass/normalize/import-now';
 
-$background: #e7ded6;
+$mainBackground: #e7ded6;
+$cardBackground: #fbf9ed;
+$darkGrey: #7f7c82;
+$lightGrey: #aaa492;
 
 @font-face {
   font-family: 'ShortStack';
   src: url('assets/fonts/ShortStack.ttf');
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('assets/fonts/Nunito.ttf');
+}
+@font-face {
+  font-family: 'NunitoBold';
+  src: url('assets/fonts/NunitoBold.ttf');
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: $mainBackground;
+  font-family: 'Nunito';
+}
+h1 {
+  color: white;
+  font-family: 'NunitoBold';
+  font-size: 5rem;
+  margin: 0;
+}
+h2 {
+  font-family: 'NunitoBold';
+  font-size: 2.5em;
+}
+h3 {
+  color: $lightGrey;
+}
+legend {
+  color: $darkGrey;
 }

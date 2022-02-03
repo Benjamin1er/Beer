@@ -3,16 +3,6 @@
 #welcome {
   height: 100vh;
   width: 100vw;
-  background-color: $background;
-  #welcome-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-    img {
-      height: 65%;
-    }
-  }
   #welcome-hero {
     display: flex;
     justify-content: center;
@@ -22,9 +12,9 @@
     #welcome-beers {
       display: flex;
       justify-content: space-between;
-      height: 65%;
+      height: 60%;
       width: 75%;
-      margin-bottom: 5%;
+      margin-bottom: 7%;
       #welcome-beer {
         height: 100%;
         cursor: pointer;
@@ -32,11 +22,12 @@
           height: 100%;
         }
         p {
+          width: 100px;
           visibility: hidden;
           font-family: 'ShortStack';
           font-size: 1.2em;
           text-align: center;
-          width: 100px;
+          margin-top: 10px;
         }
       }
       #welcome-beer:hover {

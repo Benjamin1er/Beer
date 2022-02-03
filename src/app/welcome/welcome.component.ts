@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { BeerService, IBeer } from '../services/beer.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
@@ -7,7 +7,6 @@ import { BeerService, IBeer } from '../services/beer.service';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  public brewdogLogo = '../assets/brewdog-logo.png';
   public beers: IBeer[] = [];
   private service: BeerService;
   constructor(param_service: BeerService) {
@@ -16,8 +15,6 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
     this.service.getBeer().subscribe((param: IBeer[]) => {
       this.beers = param;
-      // eslint-disable-next-line no-undef
-      console.log(this.beers);
     });
   }
 }

@@ -1,0 +1,52 @@
+@import '../../styles.scss';
+
+#beer-card {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  #bc-left {
+    position: relative;
+    width: 45%;
+    height: 85%;
+    margin-top: 2%;
+    img,
+    h1 {
+      position: absolute;
+    }
+    h1 {
+      z-index: 1;
+    }
+    img {
+      height: 100%;
+    }
+    #first-bottle {
+      z-index: 2;
+      transform: scale(90%) translate(30%, 5%) rotate(20deg);
+    }
+    #second-bottle {
+      transform: scale(60%) translate(400%, -30%) rotate(-35deg);
+      filter: blur(0.3em);
+    }
+  }
+  #bc-bar {
+    width: 80%;
+    border: 1px solid $lightGrey;
+  }
+  #bc-right {
+    margin-top: 2%;
+    width: 35%;
+    height: 75%;
+    padding: 3%;
+    background-color: $cardBackground;
+    h2 {
+      margin-top: 0;
+    }
+    h3,
+    p {
+      margin-top: 40px;
+    }
+  }
+  #bc-right > * {
+    margin: 20px 0;
+  }
+}
