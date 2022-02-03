@@ -16,6 +16,8 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
     this.service.getBeer().subscribe((param: IBeer[]) => {
       this.beers = param;
+      // eslint-disable-next-line no-undef
+      console.log(this.beers);
     });
   }
 }

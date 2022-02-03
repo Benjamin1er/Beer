@@ -1,9 +1,13 @@
 <div id="welcome">
-  <div id="logo">
+  <div id="welcome-header">
     <img [src]="brewdogLogo" alt="Logo" />
   </div>
-  <div *ngFor="let beer of beers">
-    <img [src]="beer.image" [alt]="beer.name" />
-    <p>{{ beer.name }}</p>
+  <div id="welcome-hero">
+    <div id="welcome-beers">
+      <div id="welcome-beer" *ngFor="let beer of beers | slice: 11:17">
+        <img [src]="beer.image_url" [alt]="beer.name" />
+        <p>{{ beer.name }}</p>
+      </div>
+    </div>
   </div>
 </div>

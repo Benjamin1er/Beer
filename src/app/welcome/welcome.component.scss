@@ -2,14 +2,58 @@
 
 #welcome {
   height: 100vh;
+  width: 100vw;
   background-color: $background;
-  #logo {
+  #welcome-header {
     display: flex;
     justify-content: center;
-    height: 15vh;
-    padding: 2rem;
+    align-items: center;
+    height: 20vh;
     img {
-      height: 100%;
+      height: 65%;
+    }
+  }
+  #welcome-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    #welcome-beers {
+      display: flex;
+      justify-content: space-between;
+      height: 65%;
+      width: 75%;
+      margin-bottom: 5%;
+      #welcome-beer {
+        height: 100%;
+        cursor: pointer;
+        img {
+          height: 100%;
+        }
+        p {
+          visibility: hidden;
+          font-family: 'ShortStack';
+          font-size: 1.2em;
+          text-align: center;
+          width: 100px;
+        }
+      }
+      #welcome-beer:hover {
+        transform: scale(120%);
+        transition: all 0.6s ease;
+        p {
+          visibility: visible;
+        }
+      }
+    }
+    #welcome-beers:hover > #welcome-beer {
+      filter: grayscale(100%);
+      filter: opacity(50%);
+      transition: all 0.6s ease;
+    }
+    #welcome-beers:hover #welcome-beer:hover {
+      filter: none;
     }
   }
 }

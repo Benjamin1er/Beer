@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -13,7 +13,9 @@ export class BeerService {
     this.service = param_service;
   }
   public getBeer(): Observable<IBeer[]> {
-    const obsBeer$: Observable<any> = this.service.get('../assets/beers.json');
+    const obsBeer$: Observable<any> = this.service.get(
+      'https://api.punkapi.com/v2/beers'
+    );
     const treatment = (param_data: any) => {
       return param_data as IBeer[];
     };
@@ -23,5 +25,5 @@ export class BeerService {
 
 export interface IBeer {
   name: string;
-  image: string;
+  image_url: string;
 }

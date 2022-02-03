@@ -1,3 +1,8 @@
 @import '../node_modules/normalize-scss/sass/normalize/import-now';
 
 $background: #e7ded6;
+
+@font-face {
+  font-family: 'ShortStack';
+  src: url('assets/fonts/ShortStack.ttf');
+}
