@@ -27,4 +27,14 @@ export interface IBeer {
   id: number;
   name: string;
   image_url: string;
+  ingredients: {
+    malt: IMalt[];
+    hops: IHop[];
+  };
+}
+interface IMalt {
+  name: string;
+}
+interface IHop {
+  name: string;
 }

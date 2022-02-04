@@ -1,9 +1,49 @@
 #header {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 20vh;
+  #header-empty-box {
+    width: 10%;
+  }
   img {
     height: 65%;
   }
+  #header-filter {
+    position: relative;
+    width: 130px;
+    text-align: center;
+    > button {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    #menu {
+      position: absolute;
+      width: 130px;
+      form {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        select {
+          font-family: 'ShortStack';
+          background-color: inherit;
+          border: none;
+          margin-top: 10px;
+        }
+        button {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  font-family: 'ShortStack';
+}
+button:hover {
+  color: gray;
 }

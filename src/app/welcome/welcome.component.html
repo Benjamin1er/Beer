@@ -1,7 +1,7 @@
 <div id="welcome">
   <div id="welcome-hero">
     <div id="welcome-beers">
-      <div id="welcome-beer" *ngFor="let beer of beers | slice: 11:17">
+      <div id="welcome-beer" *ngFor="let beer of beers | slice: 0:6">
         <img
           [routerLink]="['/beer']"
           [queryParams]="{ id: beer.id }"

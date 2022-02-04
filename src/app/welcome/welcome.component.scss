@@ -1,7 +1,7 @@
 @import '../../styles.scss';
 
 #welcome {
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   #welcome-hero {
     display: flex;
@@ -27,7 +27,7 @@
           font-family: 'ShortStack';
           font-size: 1.2em;
           text-align: center;
-          margin-top: 10px;
+          margin: 10px auto;
         }
       }
       #welcome-beer:hover {
