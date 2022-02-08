@@ -4,14 +4,22 @@
   <div id="header-filter">
     <button (click)="openMenu()">Filters</button>
     <div id="menu">
-      <form [ngStyle]="{ visibility: isOpen ? 'visible' : 'hidden' }" action="">
-        <select name="malts" id="">
+      <form
+        [ngStyle]="{ visibility: isOpen ? 'visible' : 'hidden' }"
+        [formGroup]="filteredForm"
+        (ngSubmit)="onFilter()"
+      >
+        <select name="malts" formControlName="malt">
           <option value="Malt" selected="true" disabled="true">Malt</option>
-          <option *ngFor="let malt of malts" value="malts">{{ malt }}</option>
+          <option *ngFor="let malt of malts">
+            {{ malt }}
+          </option>
         </select>
-        <select name="hops" id="">
+        <select name="hops" formControlName="hop">
           <option value="hops" selected="true" disabled="true">Hop</option>
-          <option *ngFor="let hop of hops" value="hops">{{ hop }}</option>
+          <option *ngFor="let hop of hops">
+            {{ hop }}
+          </option>
         </select>
         <button type="submit">Apply filters</button>
       </form>

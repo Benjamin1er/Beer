@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
 import { BeerService, IBeer } from '../services/beer.service';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,10 @@ export class HeaderComponent implements OnInit {
   public hops: string[] = [];
   private service: BeerService;
   public isOpen: boolean = false;
-
+  filteredForm = new FormGroup({
+    malt: new FormControl(''),
+    hop: new FormControl('')
+  });
   constructor(param_service: BeerService) {
     this.service = param_service;
   }
@@ -36,5 +40,14 @@ export class HeaderComponent implements OnInit {
   }
   openMenu() {
     this.isOpen = !this.isOpen;
+  }
+  onFilter() {
+    console.log(this.filteredForm.value);
+    this.beers = this.beers.filter((beer) =>
+      beer.ingredients.malt.includes(this.filteredForm.value.malt) &&
+      beer.ingredients.hops.includes(this.filteredForm.value.hop)
+        ? beer
+        : null
+    );
   }
 }
