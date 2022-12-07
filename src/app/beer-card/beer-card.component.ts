@@ -12,7 +12,9 @@ export class BeerCardComponent implements OnInit {
   public id?: number;
   public beer?: ICardBeer;
   public title?: string[];
+htgrhhgbdgf
 
+grgfnbggeg
   private service: BeerCardService;
   constructor(private route: ActivatedRoute, param_service: BeerCardService) {
     this.service = param_service;
